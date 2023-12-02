@@ -1,7 +1,11 @@
+.totalAbout{
+  background-color: #a7bfef;
+}
+
 .about-us {
-    max-width: 800px;
+    max-width: 80vw;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 2vw 0;
   }
   
   .team-members {

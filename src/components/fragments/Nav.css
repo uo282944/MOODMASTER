@@ -1,0 +1,48 @@
+/* Nav.css */
+
+/* Estilos del contenedor principal */
+.nav-bar {
+    display: flex;
+    justify-content: flex-start; /* Alineación hacia el inicio (izquierda) */
+    background-color: #a7bfef;
+    color: #ffffff;
+    align-items: center;
+    height: 10vh;
+  }
+  
+  /* Estilos del contenedor del icono */
+  .nav-icon {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .nav-logo {
+    color: #ffffff;
+    width: 60px;
+    height: 60px; 
+    margin-right: 10px; 
+  }
+  
+ 
+  .nav-texto {
+    color: white;
+    font-size: 3rem;
+    font-family: Arial, sans-serif;
+    margin: 0; 
+  }
+  
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  /* Estilos de VentanaIzquierda */
+  .nav-ventana {
+    margin-left: auto; 
+    padding: 20px; 
+    box-sizing: border-box;
+  }

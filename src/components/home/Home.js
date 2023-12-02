@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+import logo from '../../imagenes/logo.svg';
 import './Home.css';
-import VentanaIzquierda from './VentanaIzquierda';
+import VentanaIzquierda from '../fragments/VentanaIzquierda';
 import Typography from '@mui/joy/Typography';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Button from '@mui/joy/Button';
 
 function Home() {
   return (
@@ -10,7 +10,9 @@ function Home() {
       <header className="Home-header">
         <img src={logo} className="Home-logo" alt="logo" />
         <Typography variant="h1" component="div" sx={{ color: 'black', fontSize: '3rem', fontFamily: 'Arial, sans-serif' }}>MoodMaster</Typography>
-        <VentanaIzquierda></VentanaIzquierda>
+        <Button variant="soft" color="neutral" >
+          Start
+        </Button>
       </header>
     </div>
   );

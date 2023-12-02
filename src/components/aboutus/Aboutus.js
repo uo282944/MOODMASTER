@@ -21,17 +21,19 @@ function AboutUs() {
   ];
 
   return (
-    <div className="about-us">
-      <h2 style={{ color: 'black' }}>About Us</h2>
-      <div className="team-members">
-        {teamMembers.map(member => (
-          <div className="member" key={member.name}>
-            <img src={member.photo} alt={member.name} />
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-            <p>{member.description}</p>
-          </div>
-        ))}
+    <div className='totalAbout'>
+      <div className="about-us">
+        <h2 style={{ color: 'black' }}>About Us</h2>
+        <div className="team-members">
+          {teamMembers.map(member => (
+            <div className="member" key={member.name}>
+              <img src={member.photo} alt={member.name} />
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+              <p>{member.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
