@@ -1,0 +1,10 @@
+.emociones{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.emociones-container{
+    display: flex;
+    align-items: center;
+}

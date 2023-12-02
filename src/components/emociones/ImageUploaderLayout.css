@@ -1,0 +1,9 @@
+.imguploader-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.imguploader-container-imagen{
+    display: flex;
+    flex-direction: column;
+}
