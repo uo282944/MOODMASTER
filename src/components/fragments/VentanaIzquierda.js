@@ -7,17 +7,19 @@ import ListItemButton from '@mui/joy/ListItemButton';
 import Typography from '@mui/joy/Typography';
 import ModalClose from '@mui/joy/ModalClose';
 import Search from '@mui/icons-material/Search';
-import Button from '@mui/joy/Button';
+import IconButton from '@mui/joy/IconButton';
+import Menu from '@mui/icons-material/Menu';
 import { Outlet, Link } from "react-router-dom";
+import Button from '@mui/joy/Button';
 
 export default function DrawerMobileNavigation() {
   const [open, setOpen] = React.useState(false);
 
   return (
     <React.Fragment>
-      <Button variant="soft" color="neutral" onClick={() => setOpen(true)}>
-        Start
-      </Button>
+      <IconButton variant="outlined" color="neutral" onClick={() => setOpen(true)}>
+        <Menu />
+      </IconButton>
       <Drawer open={open} onClose={() => setOpen(false)}>
         <Box
           sx={{
@@ -82,12 +84,18 @@ export default function DrawerMobileNavigation() {
             '& > div': { justifyContent: 'center' },
           }}
         >
-          <ListItemButton sx={{ fontWeight: 'lg' }}>Home</ListItemButton>
-          <ListItemButton>
-            <Link to="/AboutUs">About</Link> {/* Enlace a la ruta '/AboutUs' */}
+          <ListItemButton component={Link} to="/" sx={{ fontWeight: 'lg', justifyContent: 'center' }}>
+            Home
           </ListItemButton>
-          <ListItemButton>Studio</ListItemButton>
-          <ListItemButton>Contact</ListItemButton>
+          <ListItemButton component={Link} to="/AboutUs" sx={{ justifyContent: 'center' }}>
+            About
+          </ListItemButton>
+          <ListItemButton component={Link} to="/Info" sx={{ justifyContent: 'center' }}>
+            Info
+          </ListItemButton>
+          <ListItemButton component={Link} to="/Contact" sx={{ justifyContent: 'center' }}>
+            Contact
+          </ListItemButton>
         </List>
         <Outlet/>
       </Drawer>

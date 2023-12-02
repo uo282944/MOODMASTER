@@ -1,5 +1,12 @@
-.principal{
+.app{
   display: grid;
-  grid-template-areas: 'principal';
-  background-color: blanchedalmond;
+  grid-template-areas: 'app-nav''principal';
+}
+
+.app-nav{
+  height: 10vh;
+}
+
+.principal{
+  height: 90vh;
 }
