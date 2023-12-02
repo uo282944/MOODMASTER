@@ -1,0 +1,11 @@
+.emociones{
+    background-color: #a7bfef;
+    height: 90vh;
+}
+
+.emociones-imagen {
+    width: 30vh;
+    justify-content: center;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
