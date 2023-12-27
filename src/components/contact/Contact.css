@@ -1,0 +1,53 @@
+.contact-window {
+    background-color: #f7f7f7;
+    padding: 1vh;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    height: 88vh;
+  }
+  
+  .contact-window h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-window form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-window label {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .contact-window input[type='email'],
+  .contact-window input[type='tel'],
+  .contact-window button {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .contact-window input[type='email']:focus,
+  .contact-window input[type='tel']:focus {
+    outline: none;
+    border-color: #007bff;
+    /* Cambia el color del borde al enfocar */
+  }
+  
+  .contact-window button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-window button:hover {
+    background-color: #0056b3;
+    /* Cambia el color de fondo al pasar el cursor */
+  }

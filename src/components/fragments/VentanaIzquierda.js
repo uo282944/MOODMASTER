@@ -17,7 +17,7 @@ export default function DrawerMobileNavigation() {
 
   return (
     <React.Fragment>
-      <IconButton variant="outlined" color="neutral" onClick={() => setOpen(true)}>
+      <IconButton variant="soft" color="neutral" onClick={() => setOpen(true)}>
         <Menu />
       </IconButton>
       <Drawer open={open} onClose={() => setOpen(false)}>
@@ -91,10 +91,10 @@ export default function DrawerMobileNavigation() {
             Mood Identifier
           </ListItemButton>
           <ListItemButton component={Link} to="/about_us" sx={{ justifyContent: 'center' }}>
-            About
+            About Us
           </ListItemButton>
           <ListItemButton component={Link} to="/info" sx={{ justifyContent: 'center' }}>
-            Info
+            Project Information
           </ListItemButton>
           <ListItemButton component={Link} to="/contact" sx={{ justifyContent: 'center' }}>
             Contact
