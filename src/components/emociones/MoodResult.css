@@ -3,3 +3,18 @@
     flex-direction: column;
     align-items: center;
 }
+
+.big-image {
+    height: 40vh; /* Tamaño más pequeño para la imagen grande */
+}
+
+.small-image {
+    height: 10vh; /* Tamaño más pequeño para las imágenes pequeñas */
+}
+
+.small-images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre las imágenes pequeñas */
+}

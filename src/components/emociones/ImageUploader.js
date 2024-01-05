@@ -4,72 +4,110 @@ import Button from '@mui/joy/Button';
 import * as tf from '@tensorflow/tfjs';
 import exampleImage from '../../imagenes/tienda.png';
 
+import Felicidad from '../../imagenes/felicidad.png';
+import Tristeza from '../../imagenes/tristeza.png';
+import Enfado from '../../imagenes/enfado.png';
+import Neutro from '../../imagenes/neutral.png';
+import Asqueo from '../../imagenes/asqueo.png';
+import Sorpresa from '../../imagenes/sorpresa.png';
+import Temeroso from '../../imagenes/temerosidad.png';
+
 const ImageUploader = () => {
-    const [image, setImage] = useState(null);
-  
-    const handleImageChange = (e) => {
+  const [image, setImage] = useState(null);
+  const [resultados, setResultados] = useState([]);
+  const [additionalImagesShown, setAdditionalImagesShown] = useState(false);
+
+  const handleImageChange = (e) => {
       const selectedImage = e.target.files[0];
       setImage(selectedImage);
-    };
-  
-    async function runModel() {
-      const model = await tf.loadLayersModel('/modelo/model.json');
+      setAdditionalImagesShown(false);  // Reset the display of additional images
+  };
 
-      // Asume que 'image' es un objeto File obtenido del input
+  async function runModel() {
+      if (!image) return;
+
+      const model = await tf.loadLayersModel('/modelo/model.json');
       const imageElement = document.createElement('img');
       const imageUrl = URL.createObjectURL(image);
       imageElement.src = imageUrl;
 
       try {
-        await new Promise((resolve, reject) => {
-          imageElement.onload = resolve;
-          imageElement.onerror = reject;
-        });
-
-        const tensorImagen = tf.browser.fromPixels(imageElement)
-          .resizeNearestNeighbor([48, 48])
-          .mean(2)
-          .expandDims(2)
-          .expandDims()
-          .toFloat()
-          .div(255.0);
-
-        // Ejecutar el modelo con la imagen
-        const predicciones = model.predict(tensorImagen);
-
-        // Etiquetas de las emociones
-        const etiquetas = ['angry', 'disgusted', 'fearful', 'happy', 'neutral', 'sad', 'surprised'];
-
-        // Mostrar las predicciones con etiquetas en la consola
-        predicciones.data().then(data => {
-          const resultados = Array.from(data).map((prob, index) => {
-            return { etiqueta: etiquetas[index], probabilidad: prob };
+          await new Promise((resolve, reject) => {
+              imageElement.onload = resolve;
+              imageElement.onerror = reject;
           });
-          console.log("Resultados de la predicción con etiquetas:", resultados);
-        });
+
+          const tensorImage = tf.browser.fromPixels(imageElement)
+              .resizeNearestNeighbor([48, 48])
+              .mean(2)
+              .expandDims(2)
+              .expandDims()
+              .toFloat()
+              .div(255.0);
+
+          const predictions = model.predict(tensorImage);
+          const etiquetas = ['angry', 'disgusted', 'fearful', 'happy', 'neutral', 'sad', 'surprised'];
+
+          const resultados = await predictions.data();
+          const mappedResults = Array.from(resultados).map((prob, index) => {
+              return { etiqueta: etiquetas[index], probabilidad: prob };
+          });
+
+          // Sort the results by probability
+          mappedResults.sort((a, b) => b.probabilidad - a.probabilidad);
+
+          setResultados(mappedResults);
+          setAdditionalImagesShown(true);
 
       } catch (error) {
-        console.error(error);
+          console.error(error);
       } finally {
-        // Limpieza
-        URL.revokeObjectURL(imageUrl);
-        imageElement.remove();
+          // Clean up
+          URL.revokeObjectURL(imageUrl);
+          imageElement.remove();
       }
-    }
-  
-    return (
-      <div className="imguploader-container">
-        <input type="file" onChange={handleImageChange} accept="image/*" />
-  
-        {image && (
-          <div className='imguploader-container-imagen'>
-            <h2>Vista previa:</h2>
-            <img src={URL.createObjectURL(image)} alt="Vista previa" height="400vh" />
-            <Button variant='soft' onClick={runModel} style={{marginTop: '1vh'}}>Subir Imagen</Button>
-          </div>
-        )}
-      </div>
-    );
+  }
+
+  // Mapping from labels to image sources
+  const labelToImageMap = {
+      'angry': Enfado,
+      'disgusted': Asqueo,
+      'fearful': Temeroso,
+      'happy': Felicidad,
+      'neutral': Neutro,
+      'sad': Tristeza,
+      'surprised': Sorpresa,
   };
+
+  return (
+      <div className="imguploader-container">
+          <div className="left-section">
+              <input type="file" onChange={handleImageChange} accept="image/*" />
+              {image && (
+                  <div className='image-preview-container'>
+                      <img src={URL.createObjectURL(image)} alt="Preview" className="uploaded-image" />
+                      <Button variant='soft' onClick={runModel} className="upload-button">Upload Image</Button>
+                  </div>
+              )}
+          </div>
+          {additionalImagesShown && resultados.length > 0 && (
+              <div className="right-section">
+                  <div className="main-emotion-container">
+                      <img src={labelToImageMap[resultados[0].etiqueta]} alt={resultados[0].etiqueta} className="main-image" />
+                      <p>{resultados[0].etiqueta} ({resultados[0].probabilidad.toFixed(2)})</p>
+                  </div>
+                  <div className="additional-emotions-container">
+                      {resultados.slice(1).map((emotion, index) => (
+                          <div key={index} className="emotion-image-container">
+                              <img src={labelToImageMap[emotion.etiqueta]} alt={emotion.etiqueta} className="additional-image" />
+                              <p>{emotion.etiqueta} ({emotion.probabilidad.toFixed(2)})</p>
+                          </div>
+                      ))}
+                  </div>
+              </div>
+          )}
+      </div>
+  );
+};
 
 export default ImageUploader;

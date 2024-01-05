@@ -6,6 +6,7 @@ import ProjectInfo from './components/projectInfo/ProjectInfo';
 import Contact from './components/contact/Contact';
 import Nav from './components/fragments/Navegador';
 import Emociones from './components/emociones/Emociones'
+import ImageUploader from './components/emociones/ImageUploader'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Nav className='app-nav' />
         <Routes className="principal">
           <Route path="/" element={<Home />}/>
-          <Route path="mood_identifier" element={<Emociones />} />
+          <Route path="mood_identifier" element={<ImageUploader />} />
           <Route path="about_us" element={<AboutUs />} />
           <Route path="info" element={<ProjectInfo />} />
           <Route path="contact" element={<Contact />} />
