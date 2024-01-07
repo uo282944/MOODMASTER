@@ -16,7 +16,7 @@ const ImageUploader = () => {
   const [image, setImage] = useState(null);
   const [resultados, setResultados] = useState([]);
   const [additionalImagesShown, setAdditionalImagesShown] = useState(false);
-
+  const toPercentage = (probabilidad) => (probabilidad * 100).toFixed(2);
   const handleImageChange = (e) => {
       const selectedImage = e.target.files[0];
       setImage(selectedImage);
@@ -68,6 +68,11 @@ const ImageUploader = () => {
       }
   }
 
+  function capitalize(s) {
+    if (typeof s !== 'string') return '';
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
   // Mapping from labels to image sources
   const labelToImageMap = {
       'angry': Enfado,
@@ -86,7 +91,7 @@ const ImageUploader = () => {
               {image && (
                   <div className='image-preview-container'>
                       <img src={URL.createObjectURL(image)} alt="Preview" className="uploaded-image" />
-                      <Button variant='soft' onClick={runModel} className="upload-button">Upload Image</Button>
+                      <Button variant='soft' onClick={runModel} className="upload-button">Analyze</Button>
                   </div>
               )}
           </div>
@@ -94,13 +99,13 @@ const ImageUploader = () => {
               <div className="right-section">
                   <div className="main-emotion-container">
                       <img src={labelToImageMap[resultados[0].etiqueta]} alt={resultados[0].etiqueta} className="main-image" />
-                      <p>{resultados[0].etiqueta} ({resultados[0].probabilidad.toFixed(2)})</p>
+                      <p>{capitalize(resultados[0].etiqueta)} ({toPercentage(resultados[0].probabilidad)}%)</p>
                   </div>
                   <div className="additional-emotions-container">
                       {resultados.slice(1).map((emotion, index) => (
                           <div key={index} className="emotion-image-container">
                               <img src={labelToImageMap[emotion.etiqueta]} alt={emotion.etiqueta} className="additional-image" />
-                              <p>{emotion.etiqueta} ({emotion.probabilidad.toFixed(2)})</p>
+                              <p>{capitalize(emotion.etiqueta)} ({toPercentage(emotion.probabilidad)}%)</p>
                           </div>
                       ))}
                   </div>

@@ -93,12 +93,6 @@ export default function DrawerMobileNavigation() {
           <ListItemButton component={Link} to="/about_us" sx={{ justifyContent: 'center' }}>
             About Us
           </ListItemButton>
-          <ListItemButton component={Link} to="/info" sx={{ justifyContent: 'center' }}>
-            Project Information
-          </ListItemButton>
-          <ListItemButton component={Link} to="/contact" sx={{ justifyContent: 'center' }}>
-            Contact
-          </ListItemButton>
         </List>
         <Outlet/>
       </Drawer>

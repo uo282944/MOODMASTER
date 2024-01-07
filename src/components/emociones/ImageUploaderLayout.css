@@ -29,7 +29,7 @@
 
 .upload-button {
     display: block; /* Asegura que el botón sea un bloque y ocupe todo el ancho del contenedor .image-and-button-container */
-    width: auto; /* El botón tendrá el ancho necesario para ajustarse al texto */
+    width: 100%; /* El botón tendrá el ancho necesario para ajustarse al texto */
     margin-top: 1vh;
 }
 .right-section {
