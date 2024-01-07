@@ -15,7 +15,7 @@ function AboutUs() {
     {
         name: 'Adrián Sanz',
         role: 'Developer',
-        description: 'Desarrollador junior de la Universidad de Gerona, estudiante del grado de Informatica de Software y estudiante prodigio en la computación cuántica',
+        description: 'Desarrollador junior de la Universidad de Gerona, estudiante de Ingeniería Informatica y especialista en el campo de las inteligencias artificiales',
         photo: logoadri
     }
   ];

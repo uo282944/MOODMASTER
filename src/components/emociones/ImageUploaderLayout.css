@@ -1,9 +1,73 @@
-.imguploader-container{
+.imguploader-container {
     display: flex;
-    flex-direction: column;
+    align-items: start;
+    background-color: #a7bfef;
+    height: 90vh;
 }
 
-.imguploader-container-imagen{
+.left-section {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+}
+
+.image-and-button-container {
+    display: inline-block; /* Esto asegura que el contenedor solo sea tan ancho como su contenido */
+    text-align: center;
+}
+
+.uploaded-image {
+    max-width: 100%; /* Limita el ancho al del contenedor padre */
+    max-height: 60vh; /* Ajusta según tus necesidades */
+    height: 60vh;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    display: block; /* Esto asegura que la imagen sea un bloque y no permita que otros elementos se alineen a su lado */
+}
+
+.upload-button {
+    display: block; /* Asegura que el botón sea un bloque y ocupe todo el ancho del contenedor .image-and-button-container */
+    width: 100%; /* El botón tendrá el ancho necesario para ajustarse al texto */
+    margin-top: 1vh;
+}
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-emotion-container {
+    text-align: center;
+}
+
+.main-emotion-container img {
+    height: 40vh; /* Ajusta el tamaño de la imagen principal */
+    width: auto;
+}
+
+.main-emotion-container p {
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+.additional-emotions-container {
+    display: flex;
+    justify-content: center;
+}
+
+.emotion-image-container {
+    text-align: center;
+    margin-right: 1vw;
+    margin-top: 0;
+}
+
+.emotion-image-container img {
+    height: 10vh; /* Ajusta el tamaño de las imágenes adicionales */
+    width: auto;
+}
+
+.emotion-image-container p {
+    font-size: 1em; /* Ajusta según tus necesidades */
 }
