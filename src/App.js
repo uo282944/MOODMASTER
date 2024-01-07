@@ -15,9 +15,9 @@ function App() {
       <BrowserRouter className='app'>
         <Nav className='app-nav' />
         <Routes className="principal">
-          <Route path="/MOODMASTER" element={<Home />}/>
-          <Route path="MOODMASTER/mood_identifier" element={<ImageUploader />} />
-          <Route path="MOODMASTER/about_us" element={<AboutUs />} />
+          <Route path="/" element={<Home />}/>
+          <Route path="/mood_identifier" element={<ImageUploader />} />
+          <Route path="/about_us" element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
   );
