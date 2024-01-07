@@ -84,13 +84,13 @@ export default function DrawerMobileNavigation() {
             '& > div': { justifyContent: 'center' },
           }}
         >
-          <ListItemButton component={Link} to="/" sx={{ fontWeight: 'lg', justifyContent: 'center' }}>
+          <ListItemButton component={Link} to="MOODMASTER/" sx={{ fontWeight: 'lg', justifyContent: 'center' }}>
             Home
           </ListItemButton>
-          <ListItemButton component={Link} to="/mood_identifier" sx={{ justifyContent: 'center' }}>
+          <ListItemButton component={Link} to="MOODMASTER/mood_identifier" sx={{ justifyContent: 'center' }}>
             Mood Identifier
           </ListItemButton>
-          <ListItemButton component={Link} to="/about_us" sx={{ justifyContent: 'center' }}>
+          <ListItemButton component={Link} to="MOODMASTER/about_us" sx={{ justifyContent: 'center' }}>
             About Us
           </ListItemButton>
         </List>

@@ -26,7 +26,7 @@ const ImageUploader = () => {
   async function runModel() {
       if (!image) return;
 
-      const model = await tf.loadLayersModel('https://github.com/uo282944/MOODMASTER/blob/master/public/modelo/model.json');
+      const model = await tf.loadLayersModel(process.env.PUBLIC_URL + '/modelo/model.json');
       const imageElement = document.createElement('img');
       const imageUrl = URL.createObjectURL(image);
       imageElement.src = imageUrl;

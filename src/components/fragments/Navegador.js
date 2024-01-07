@@ -9,7 +9,7 @@ function Nav() {
     return (
     <div className="nav-bar">
         <div className='nav-icon'>
-            <Link to='/'>
+            <Link to='/MOODMASTER'>
                 <img src={logo} className="nav-logo" alt="logo" />
             </Link>
             <Typography variant="h1" component="div" sx={{ color: 'black', fontSize: '3rem', fontFamily: 'Arial, sans-serif' }}>MoodMaster</Typography>
