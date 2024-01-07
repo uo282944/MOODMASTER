@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MOODMASTER/static/css/main.77c07df6.css",
-    "main.js": "/MOODMASTER/static/js/main.0b700170.js",
+    "main.js": "/MOODMASTER/static/js/main.f1ecf8c6.js",
     "static/js/787.285a5e86.chunk.js": "/MOODMASTER/static/js/787.285a5e86.chunk.js",
     "static/media/fotopjavi.png": "/MOODMASTER/static/media/fotopjavi.8fcd29bebfe0c8111699.png",
     "static/media/enfado.png": "/MOODMASTER/static/media/enfado.c284fe4650df78dadabc.png",
@@ -15,14 +15,14 @@
     "static/media/neutral.png": "/MOODMASTER/static/media/neutral.4642d2fa60c864510a36.png",
     "static/media/fotopadri.png": "/MOODMASTER/static/media/fotopadri.410af2045ea2193d0158.png",
     "static/media/tienda.png": "/MOODMASTER/static/media/tienda.31ee7aba5532286798c2.png",
-    "static/media/logo.svg": "/MOODMASTER/static/media/logo.55cf616628847b75885cd2cb40395f36.svg",
+    "static/media/logo.svg": "/MOODMASTER/static/media/logo.9b64824a7e82724d5d0d2bef3d2ae913.svg",
     "index.html": "/MOODMASTER/index.html",
     "main.77c07df6.css.map": "/MOODMASTER/static/css/main.77c07df6.css.map",
-    "main.0b700170.js.map": "/MOODMASTER/static/js/main.0b700170.js.map",
+    "main.f1ecf8c6.js.map": "/MOODMASTER/static/js/main.f1ecf8c6.js.map",
     "787.285a5e86.chunk.js.map": "/MOODMASTER/static/js/787.285a5e86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.77c07df6.css",
-    "static/js/main.0b700170.js"
+    "static/js/main.f1ecf8c6.js"
   ]
 }
