@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import './ImageUploaderLayout.css';
 import Button from '@mui/joy/Button';
 import * as tf from '@tensorflow/tfjs';
@@ -83,11 +83,23 @@ const ImageUploader = () => {
       'sad': Tristeza,
       'surprised': Sorpresa,
   };
+  const inputFileRef = useRef(null);
+
+  const handleButtonClick = () => {
+    inputFileRef.current.click();
+  };
 
   return (
       <div className="imguploader-container">
           <div className="left-section">
-              <input type="file" onChange={handleImageChange} accept="image/*" />
+          <Button variant='soft' onClick={handleButtonClick}>Upload image</Button>
+                <input
+                    type="file"
+                    onChange={handleImageChange}
+                    accept="image/*"
+                    ref={inputFileRef}
+                    style={{ display: 'none' }} // Oculta el input de archivo
+                />
               {image && (
                   <div className='image-preview-container'>
                       <img src={URL.createObjectURL(image)} alt="Preview" className="uploaded-image" />

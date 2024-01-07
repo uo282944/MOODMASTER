@@ -9,13 +9,13 @@ function AboutUs() {
     {
         name: 'Javier Novella',
         role: 'Developer',
-        description: 'Desarrollador junior de la Universidad de Oviedo, estudiante del grado de Informatica de Software y saxofonista profesional del conservatorio de Oviedo',
+        description: 'Junior developer from the University of Oviedo, student of the Software Informatics degree and professional saxophonist from the Oviedo Conservatory',
         photo: logojavi
     },
     {
         name: 'Adrián Sanz',
         role: 'Developer',
-        description: 'Desarrollador junior de la Universidad de Gerona, estudiante de Ingeniería Informatica y especialista en el campo de las inteligencias artificiales',
+        description: 'Junior developer from the University of Lerida, student of Computer Engineering and specialist in the field of artificial intelligence',
         photo: logoadri
     }
   ];
